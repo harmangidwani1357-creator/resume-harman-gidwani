@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harman Gidwani – Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #eef1f4;
+    --paper: #ffffff;
+    --ink: #14213d;
+    --text: #2b3445;
+    --muted: #5b6472;
+    --rule: #d9dee5;
+    --accent: #0f766e;
+    --side: #14213d;
+    --side-text: #e6ebf2;
+    --side-muted: #9fb0c8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    background: var(--page);
+    color: var(--text);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 32px 16px;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .resume {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(20, 33, 61, .14);
+  }
+
+  /* Sidebar */
+  aside {
+    background: var(--side);
+    color: var(--side-text);
+    padding: 44px 28px;
+  }
+
+  /* Profile photo (falls back to initials if photo.jpg is missing) */
+  .avatar {
+    position: relative;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--accent);
+    display: grid; place-items: center;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 700; font-size: 40px; color: #fff;
+    margin-bottom: 28px;
+    border: 3px solid rgba(255,255,255,.25);
+  }
+  .avatar img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  aside h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 17px; font-weight: 600;
+    color: #fff;
+    padding-bottom: 6px;
+    margin: 30px 0 12px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  aside h2:first-of-type { margin-top: 0; }
+  .contact { list-style: none; display: grid; gap: 14px; font-size: 14px; }
+  .contact span { display: block; color: var(--side-muted); font-size: 12.5px; }
+  .contact a, .contact div { word-break: break-word; }
+
+  .skills { list-style: none; display: grid; gap: 12px; }
+  .skills li { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; }
+  .skills em { font-style: normal; font-size: 12.5px; color: var(--side-muted); }
+
+  /* Main */
+  main { padding: 48px 44px; }
+  header h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 40px; line-height: 1.1;
+    color: var(--ink); font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  header p { color: var(--accent); font-weight: 600; margin-top: 8px; }
+
+  section { margin-top: 34px; }
+  section h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 20px; font-weight: 600; color: var(--ink);
+    padding-bottom: 6px; margin-bottom: 16px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block; min-width: 100%;
+  }
+  .summary { max-width: 62ch; }
+
+  .entry { margin-bottom: 20px; padding-left: 16px; border-left: 3px solid var(--rule); }
+  .entry:last-child { margin-bottom: 0; }
+  .entry h3 { font-size: 16px; color: var(--ink); font-weight: 700; line-height: 1.35; }
+  .entry .where { color: var(--muted); font-size: 14px; }
+  .entry .when { color: var(--accent); font-size: 13px; font-weight: 600; }
+
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips li {
+    background: #e7f3f1; color: #0b5750;
+    padding: 4px 12px; border-radius: 999px;
+    font-size: 13.5px; font-weight: 600;
+  }
+
+  /* Mobile */
+  @media (max-width: 720px) {
+    body { padding: 0; }
+    .resume { grid-template-columns: 1fr; border-radius: 0; }
+    aside { padding: 32px 24px; }
+    main { padding: 32px 24px; }
+    header h1 { font-size: 34px; }
+  }
+
+  /* Print / Save as PDF */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .resume { box-shadow: none; border-radius: 0; max-width: none; min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+  <div class="resume">
+
+    <aside>
+      <!-- Put your photo in the same folder and name it photo.jpg -->
+      <div class="avatar">
+        HG
+        <img src="photo.jpg" alt="Harman Gidwani" onerror="this.remove()">
+      </div>
+
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:harmangidwani1357@gmail.com">harmangidwani1357@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+918305756006">+91 83057 56006</a></li>
+        <li><span>Location</span><div>Pune, Maharashtra</div></li>
+        <li><span>Hometown</span><div>Gwalior, Madhya Pradesh</div></li>
+        <li><span>Date of birth</span><div>24 November 2007</div></li>
+      </ul>
+
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Microsoft Excel <em>Advanced</em></li>
+        <li>HTML <em>Advanced</em></li>
+        <li>CSS <em>Advanced</em></li>
+      </ul>
+    </aside>
+
+    <main>
+      <header>
+        <h1>Harman Gidwani</h1>
+        <p>Economics &amp; Business Student</p>
+      </header>
+
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">
+          Economics and business student in Pune, pursuing an Honours degree in Economics
+          alongside IIM Bangalore's BBA in Digital Business &amp; Entrepreneurship.
+          Comfortable with Excel for analysis and with HTML and CSS for building clean web pages.
+          A consistent performer throughout school.
+        </p>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="entry">
+          <h3>BSc Economics (Honours)</h3>
+          <div class="where">SSE, Pune</div>
+          <div class="when">Ongoing</div>
+        </div>
+        <div class="entry">
+          <h3>BBA in Digital Business &amp; Entrepreneurship (DB&amp;E)</h3>
+          <div class="where">Indian Institute of Management Bangalore (IIMB)</div>
+          <div class="when">Ongoing</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Strengths</h2>
+        <ul class="chips">
+          <li>Data analysis in Excel</li>
+          <li>Web design with HTML &amp; CSS</li>
+          <li>Academic consistency</li>
+        </ul>
+      </section>
+
+      <!-- Add more sections here later, for example Projects, Internships or Achievements.
+           Copy an <div class="entry"> block from Education and edit the text. -->
+    </main>
+
+  </div>
+</body>
+</html>
